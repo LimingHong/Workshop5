@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Workshop5.App", "Workshop5.App\Workshop5.App.csproj", "{F07AE08A-CB5E-450C-9113-73540B7ABEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelExpertsClassLib", "..\..\..\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\TravelExpertsClassLib.csproj", "{05669508-D98A-4A2E-8E9B-E3D7D08F5A82}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelExpertsClassLib", "TravelExpertsClassLib\TravelExpertsClassLib.csproj", "{05669508-D98A-4A2E-8E9B-E3D7D08F5A82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

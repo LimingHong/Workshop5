@@ -1,0 +1,6 @@
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\bin\Release\TravelExpertsClassLib.dll
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\bin\Release\TravelExpertsClassLib.pdb
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Release\TravelExpertsClassLib.csprojAssemblyReference.cache
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Release\TravelExpertsClassLib.csproj.CoreCompileInputs.cache
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Release\TravelExpertsClassLib.dll
+C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Release\TravelExpertsClassLib.pdb
