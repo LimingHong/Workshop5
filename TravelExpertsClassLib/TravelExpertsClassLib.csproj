@@ -43,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agents.cs" />
+    <Compile Include="BookingDetails.cs" />
+    <Compile Include="Bookings.cs" />
+    <Compile Include="CustomerHistoryDB.cs" />
+    <Compile Include="Customers.cs" />
+    <Compile Include="CustomersDB.cs" />
     <Compile Include="LoginInfosDB.cs" />
     <Compile Include="TravelExpertsDB.cs" />
     <Compile Include="Packages.cs" />
