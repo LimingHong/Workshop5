@@ -220,8 +220,8 @@ C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Microsoft.AspNet.Fr
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csprojAssemblyReference.cache
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csproj.CoreCompileInputs.cache
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csproj.CopyComplete
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.pdb
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csprojAssemblyReference.cache
