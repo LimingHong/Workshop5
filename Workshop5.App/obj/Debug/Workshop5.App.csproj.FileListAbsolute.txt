@@ -223,3 +223,5 @@ C:\Users\black\OneDrive\Desktop\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.
 C:\Users\black\OneDrive\Desktop\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csproj.CopyComplete
 C:\Users\black\OneDrive\Desktop\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.dll
 C:\Users\black\OneDrive\Desktop\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.pdb
+C:\Users\821129\Desktop\Workshop5\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.dll
+C:\Users\821129\Desktop\Workshop5\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.pdb
