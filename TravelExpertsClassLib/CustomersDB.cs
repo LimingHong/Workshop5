@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelExpertsClassLib
+namespace TravelExpertsClassLib 
 {
-    public class CustomersDB
+    public class CustomersDB : TravelExpertsDB
     {
         public static List<Customers> GetCustomerId(string a, string b)
         {
@@ -129,16 +129,7 @@ namespace TravelExpertsClassLib
             return success;
         }
 
-        private static SqlConnection GetConnection()
-        {
-            string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=TravelExperts;Integrated Security=True";
-
-            // ERIC version
-            //string connectionString = @"Data Source=localhost;Initial Catalog=TravelExperts;Integrated Security=True";
-
-
-            return new SqlConnection(connectionString);
-        }
+      
 
         public static bool AddCustomer(Customers input)
         {
