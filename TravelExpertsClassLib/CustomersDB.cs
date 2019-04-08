@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace TravelExpertsClassLib
+namespace TravelExpertsClassLib 
 {
     public class CustomersDB : TravelExpertsDB
     {
@@ -125,6 +125,7 @@ namespace TravelExpertsClassLib
 
             return success;
         }
+
 
 
         public static bool AddCustomer(Customers input)
