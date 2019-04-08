@@ -45,6 +45,7 @@
     <Compile Include="Agents.cs" />
     <Compile Include="BookingDetails.cs" />
     <Compile Include="Bookings.cs" />
+    <Compile Include="CustomerHistory.cs" />
     <Compile Include="CustomerHistoryDB.cs" />
     <Compile Include="Customers.cs" />
     <Compile Include="CustomersDB.cs" />

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +10,9 @@ namespace TravelExpertsClassLib
     public class Customers
     {
         public int CustomerId { get; set; }
-        [Required]
+       // [Required]
         public string CustFirstName { get; set; }
-        [Required]
+      //  [Required]
         public string CustLastName { get; set; }
         public string CustAddress { get; set; }
         public string CustCity { get; set; }

@@ -8,9 +8,10 @@ namespace TravelExpertsClassLib
         protected static SqlConnection GetConnection()
         {
             //string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=TravelExperts;Integrated Security=True";
-
+            string connectionString = @"Data Source=ICTVM-N8G3UCCSJ\SQLEXPRESS;Initial Catalog=TravelExperts;Integrated Security=True";
+            
             // ERIC version
-            string connectionString = @"Data Source=localhost;Initial Catalog=TravelExperts;Integrated Security=True";
+            //string connectionString = @"Data Source=localhost;Initial Catalog=TravelExperts;Integrated Security=True";
 
 
             return new SqlConnection(connectionString);
