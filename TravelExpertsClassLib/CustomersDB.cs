@@ -2,22 +2,19 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TravelExpertsClassLib
 {
-    public class CustomersDB
+    public class CustomersDB : TravelExpertsDB
     {
         public static List<Customers> GetCustomerId(string a, string b)
         {
             List<Customers> customers = new List<Customers>();
             try
             {
-               Customers cust; // for reading
+                Customers cust; // for reading
 
-               
+
                 string selectQuery = "SELECT CustomerId FROM Customers WHERE CustFirstName='{a}' AND CustLastName='{b}'";
 
 
@@ -39,10 +36,10 @@ namespace TravelExpertsClassLib
                         {
                             cust = new Customers();
                             cust.CustomerId = (int)dr["CustomerId"];
-                            
 
-                       
-                         
+
+
+
 
 
 
@@ -67,7 +64,7 @@ namespace TravelExpertsClassLib
         public static bool UpdateCustomer(Customers input)
         {
 
-            
+
 
             Customers customer; // for reading
 
@@ -129,16 +126,6 @@ namespace TravelExpertsClassLib
             return success;
         }
 
-        private static SqlConnection GetConnection()
-        {
-            string connectionString = @"Data Source=localhost\sqlexpress;Initial Catalog=TravelExperts;Integrated Security=True";
-
-            // ERIC version
-            //string connectionString = @"Data Source=localhost;Initial Catalog=TravelExperts;Integrated Security=True";
-
-
-            return new SqlConnection(connectionString);
-        }
 
         public static bool AddCustomer(Customers input)
         {
