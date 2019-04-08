@@ -89,6 +89,7 @@
                             </ul>
                         </li>
                         <li><button type="button"  class="button" data-toggle="modal" data-target="#myModal">Sign In</button></li>
+                        <li><a runat="server" href="~/CustomerSignUp">SignUp</a></li>
                     </ul>
                 </nav>
             </header>

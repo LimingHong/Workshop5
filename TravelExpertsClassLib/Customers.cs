@@ -1,17 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace TravelExpertsClassLib
 {
     public class Customers
     {
-        public Customers()
-        { }
-
         public int CustomerId { get; set; }
-
         [Required]
         public string CustFirstName { get; set; }
-
         [Required]
         public string CustLastName { get; set; }
 
@@ -21,6 +21,8 @@ namespace TravelExpertsClassLib
 
 
         public string CustPostal { get; set; }
+        //public string CustCountry { get; set; }
+        
         public string CustHomePhone { get; set; }
         public string CustBusPhone { get; set; }
         public string CustEmail { get; set; }
