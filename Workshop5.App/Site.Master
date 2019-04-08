@@ -1,4 +1,7 @@
-﻿q<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Workshop5.App.SiteMaster" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Workshop5.App.SiteMaster" %>
+<%@ Import Namespace="System.Globalization" %>
+<%@ Import Namespace="System.Threading" %>
+<%@ Import Namespace="TravelExpertsClassLib" %>
 
 <!DOCTYPE html>
 
@@ -81,15 +84,20 @@
                     <ul>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
-                        <li>
-                            <a href="#">Services</a>
-                            <ul>
-                                <li><a href="#">Travel Packages</a></li>
-                                <li><a href="#">Our Agents</a></li>                                
-                            </ul>
-                        </li>
-                        <li><button type="button"  class="button" data-toggle="modal" data-target="#myModal">Sign In</button></li>
-                        <li><a runat="server" href="~/CustomerSignUp">SignUp</a></li>
+
+                        <% if (!validUser)
+                           { %>
+                            
+                        <li><asp:Button class="button" data-toggle="modal" data-target="#myModal" ID="uxSignInBtnNav" runat="server" Text="Sign In" OnClick="uxSignInBtnNav_Click" /></li>
+                        <% }
+                           else
+                           {
+                        %>
+                                <li>
+                                    <a href="#">Services</a>
+                                </li>
+                                <li> Welcome, <asp:HyperLink ID="uxAccountNameLink" runat="server"></asp:HyperLink> !</li>
+                        <% } %>
                     </ul>
                 </nav>
             </header>
@@ -100,7 +108,9 @@
             <div id="page-wrapper" >
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
                 </asp:ContentPlaceHolder>
-
+                
+            <% if (!validUser)
+               { %>
                 <!-- Modal -->
                 <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-lg">
@@ -113,20 +123,22 @@
                       <div class="modal-body">
 
                         <div class="tab-pane fade active in " id="signin">
-                            <form >
+                            <form id="signin-form" name="signin-form" method="POST">
                            <div class="row gtr-uniform gtr-50">  
 
                                 <!-- Sign In Form -->
+
                                 <!-- Text input-->
                                <div class="col-12">
                                   <label class="control-label" for="userid">UserName:</label>
-                                    <input id="userid" name="userid" type="text" placeholder="TravelExperts@mail.com" class="input-medium" required>
+                                   <asp:TextBox ID="uxUserNameLogin" placeholder="TravelExperts@mail.com" class="input-medium" required runat="server"></asp:TextBox>
                                 </div>
 
                                 <!-- Password input-->
                                 <div class="col-12">
                                   <label class="control-label" for="passwordinput">Password:</label>
-                                  <input required id="passwordinput" name="passwordinput"  type="password" placeholder="********" class="input-medium">
+                                  <asp:TextBox ID="uxPasswordLogin" type="password" placeholder="********"  class="input-medium" required runat="server"></asp:TextBox>
+                                  
                                 </div>
                                
                                <div class="col-12">
@@ -135,15 +147,17 @@
                                </div>
 
                                <div class="col-12">
-                                   <a runat="server" href="~/RegisterUser.aspx">Register with us?</a>
+                                   <a runat="server" href="~/UserReg.aspx">Register with us?</a>
                                </div>
 
                                 <!-- Button -->
                                 <div class="col-12">
                                   <label class="control-label" for="signin"></label>
                                   <div class="controls">
-                                    <button id="signin" name="signin" class="button primary fit small">Sign In</button>
-                                  </div>
+                                    <%--<button id="signin" name="signin" class="button primary fit small">Sign In</button>--%>
+                                      <asp:Button ID="uxSignInBtn" Class="btn btn-primary" runat="server" Text="Log In" OnClick="uxSignInBtn_Click" />
+
+                                 </div>
                                 </div>
                            </div>  
                             </form>
@@ -152,6 +166,7 @@
                     </div>
                   </div>
                 </div>
+              <% } %>
 
                 <footer id="footer">
                     <ul class="icons">
@@ -172,8 +187,9 @@
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.min.js") %>"></script>
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.scrolly.min.js") %>"></script>
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.dropotron.min.js") %>"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/browser.min.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.scrollex.min.js")%>"></script>
+
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/browser.min.js")%>"></script>
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/breakpoints.min.js") %>"></script>
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/util.js") %>"></script>
 <script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/main.js") %>"></script>

@@ -29,5 +29,6 @@ namespace TravelExpertsClassLib
         public int? AgentId { get; set; }
         public string username { get; set; }
         public string userPass { get; set; }
+
     }
 }
