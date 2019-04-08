@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -7,8 +8,62 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsClassLib
 {
-    class CustomersDB
+    public class CustomersDB
     {
+        public static List<Customers> GetCustomerId(string a, string b)
+        {
+            List<Customers> customers = new List<Customers>();
+            try
+            {
+               Customers cust; // for reading
+
+               
+                string selectQuery = "SELECT CustomerId FROM Customers WHERE CustFirstName='{a}' AND CustLastName='{b}'";
+
+
+
+                using (SqlConnection con = GetConnection())
+                {
+                    //use "con" anywhere in this block
+                    using (SqlCommand cmd = new SqlCommand(selectQuery, con))
+                    {
+
+                        //any exception will be thrown to the place where this method was called
+                        con.Open(); // open connection
+
+                        SqlDataReader
+                            dr = cmd.ExecuteReader(CommandBehavior
+                                .CloseConnection); // closes connection when done reading
+
+                        while (dr.Read()) // while there is data in data reader
+                        {
+                            cust = new Customers();
+                            cust.CustomerId = (int)dr["CustomerId"];
+                            
+
+                       
+                         
+
+
+
+                            customers.Add(cust);
+
+
+                        }
+                    }
+
+                }
+            }
+
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return customers;
+        }
+
+
         public static bool UpdateCustomer(Customers input)
         {
 
@@ -43,6 +98,7 @@ namespace TravelExpertsClassLib
             cmd.Parameters.AddWithValue("@CustLastName", input.CustLastName);
             cmd.Parameters.AddWithValue("@CustAddress", input.CustAddress);
             cmd.Parameters.AddWithValue("@CustCity", input.CustCity);
+            cmd.Parameters.AddWithValue("@CustProv", input.CustProv);
             cmd.Parameters.AddWithValue("@CustPostal", input.CustPostal);
             //cmd.Parameters.AddWithValue("@CustCountry", input.CustCountry);
             cmd.Parameters.AddWithValue("@CustHomePhone", input.CustHomePhone);
@@ -95,6 +151,7 @@ namespace TravelExpertsClassLib
                                            "CustLastName," +
                                            "CustAddress," +
                                            "CustCity," +
+                                           "CustProv," +
                                            "CustPostal," +
                                            //"CustCountry,"+
                                            "CustHomePhone," +
@@ -109,13 +166,14 @@ namespace TravelExpertsClassLib
                                             "@CustLastName, " +
                                             "@CustAddress, " +
                                             "@CustCity, " +
+                                            "@CustProv, " +
                                             "@CustPostal, " +
                                             //"@CustCountry " +
-                                            "@CustHomePhone " +
-                                            "@CustBusPhone " +
-                                            "@CustEmail " +
-                                            "@AgentId " +
-                                            "@username " +
+                                            "@CustHomePhone, " +
+                                            "@CustBusPhone, " +
+                                            "@CustEmail, " +
+                                            "@AgentId, " +
+                                            "@username, " +
                                             "@userPass " +
 
                                        ")";
@@ -130,12 +188,17 @@ namespace TravelExpertsClassLib
             cmd.Parameters.AddWithValue("@CustLastName", input.CustLastName);
             cmd.Parameters.AddWithValue("@CustAddress", input.CustAddress);
             cmd.Parameters.AddWithValue("@CustCity", input.CustCity);
+            cmd.Parameters.AddWithValue("@CustProv", input.CustProv);
             cmd.Parameters.AddWithValue("@CustPostal", input.CustPostal);
             //cmd.Parameters.AddWithValue("@CustCountry", input.CustCountry);
             cmd.Parameters.AddWithValue("@CustHomePhone", input.CustHomePhone);
             cmd.Parameters.AddWithValue("@CustBusPhone", input.CustBusPhone);
             cmd.Parameters.AddWithValue("@CustEmail", input.CustEmail);
-            cmd.Parameters.AddWithValue("@AgentId", input.AgentId);
+
+            if (input.AgentId == null)
+                cmd.Parameters.AddWithValue("@AgentId", DBNull.Value);
+            else
+                cmd.Parameters.AddWithValue("@AgentId", input.AgentId);
             cmd.Parameters.AddWithValue("@username", input.username);
             cmd.Parameters.AddWithValue("@userPass", input.userPass);
 
@@ -146,6 +209,7 @@ namespace TravelExpertsClassLib
                 con.Open();
                 int rowsUpdated = cmd.ExecuteNonQuery();
                 if (rowsUpdated == 0) success = false;
+
 
             }
             catch (Exception e)

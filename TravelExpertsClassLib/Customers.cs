@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace TravelExpertsClassLib
 {
-    class Customers
+    public class Customers
     {
         public int CustomerId { get; set; }
         [Required]
         public string CustFirstName { get; set; }
         [Required]
         public string CustLastName { get; set; }
+
         public string CustAddress { get; set; }
         public string CustCity { get; set; }
         public string CustProv { get; set; }
