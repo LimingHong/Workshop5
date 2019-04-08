@@ -225,21 +225,19 @@ C:\Users\812406\Desktop\back up for worhkshop 5\Workshop5\Workshop5.App\obj\Debu
 C:\Users\812406\Desktop\back up for worhkshop 5\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.csproj.CopyComplete
 C:\Users\812406\Desktop\back up for worhkshop 5\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.dll
 C:\Users\812406\Desktop\back up for worhkshop 5\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.pdb
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csc.exe
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Workshop5.App.dll.config
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Workshop5.App.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\Workshop5.App.pdb
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csc.exe
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csc.exe.config
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csc.rsp
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csi.exe
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csi.exe.config
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\csi.rsp
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.CSharp.Core.targets
@@ -248,6 +246,7 @@ C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.Di
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.Managed.Core.targets
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\Microsoft.VisualBasic.Core.targets
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.AppContext.dll
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Collections.Immutable.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Console.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Diagnostics.StackTrace.dll
@@ -256,6 +255,7 @@ C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.IO.Fi
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.IO.Pipes.AccessControl.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.IO.Pipes.dll
+C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Security.AccessControl.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Security.Claims.dll
 C:\Users\812406\Documents\GitHub\Workshop5\Workshop5.App\bin\roslyn\System.Security.Cryptography.Algorithms.dll

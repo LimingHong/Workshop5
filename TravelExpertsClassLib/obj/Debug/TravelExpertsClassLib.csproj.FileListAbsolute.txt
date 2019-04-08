@@ -16,7 +16,8 @@ C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExperts
 C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.csproj.CoreCompileInputs.cache
 C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.dll
 C:\Users\821129\Desktop\Workshop4\Workshop4\TravelExpertsWorkshop4\TravelExpertsForm\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.pdb
-C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.csprojAssemblyReference.cache
+C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\bin\Debug\TravelExpertsClassLib.dll
+C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\bin\Debug\TravelExpertsClassLib.pdb
 C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.csproj.CoreCompileInputs.cache
 C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.dll
 C:\Users\812406\Documents\GitHub\Workshop5\TravelExpertsClassLib\obj\Debug\TravelExpertsClassLib.pdb
