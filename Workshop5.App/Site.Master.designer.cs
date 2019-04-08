@@ -7,11 +7,40 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Workshop5.App {
-    
-    
-    public partial class SiteMaster {
-        
+namespace Workshop5.App
+{
+
+
+    public partial class SiteMaster
+    {
+
+        /// <summary>
+        /// uxSignInBtnNav control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxSignInBtnNav;
+
+        /// <summary>
+        /// uxAccountNameLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink uxAccountNameLink;
+
+        /// <summary>
+        /// uxLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxLogout;
+
         /// <summary>
         /// MainContent control.
         /// </summary>
@@ -20,5 +49,41 @@ namespace Workshop5.App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+
+        /// <summary>
+        /// uxUserNameLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxUserNameLogin;
+
+        /// <summary>
+        /// uxPasswordLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxPasswordLogin;
+
+        /// <summary>
+        /// uxSaveMyInfo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox uxSaveMyInfo;
+
+        /// <summary>
+        /// uxSignInBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxSignInBtn;
     }
 }
