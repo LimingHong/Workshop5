@@ -9,16 +9,9 @@
 <body>
     <form id="form1" runat="server">
     <p>
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="ObjectDataSource1" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" Width="701px">
-            <AlternatingRowStyle BackColor="White" />
-            <Columns>
-                <asp:BoundField DataField="CustFirstName" HeaderText="First Name" SortExpression="CustFirstName" />
-                <asp:BoundField DataField="CustomerId" HeaderText="Customer Id" SortExpression="CustomerId" ReadOnly="True" />
-                <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" ReadOnly="True" />
-                <asp:BoundField DataField="Destination" HeaderText="Destination" SortExpression="Destination" ReadOnly="True" />
-                <asp:BoundField DataField="BasePrice" HeaderText="Price" SortExpression="BasePrice" ReadOnly="True" />
-            </Columns>
-            <FooterStyle BackColor="#CCCC99" />
+        <asp:GridView ID="GVHistory" runat="server" Width="474px">
+             <AlternatingRowStyle BackColor="White" />
+             <FooterStyle BackColor="#CCCC99" />
             <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
             <RowStyle BackColor="#F7F7DE" />
@@ -28,7 +21,6 @@
             <SortedDescendingCellStyle BackColor="#EAEAD3" />
             <SortedDescendingHeaderStyle BackColor="#575357" />
         </asp:GridView>
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="PurchaseList" TypeName="TravelExpertsClassLib.CustomerHistoryDB"></asp:ObjectDataSource>
         <br />
     </p>
     <p style="width: 198px; margin-left: 320px">

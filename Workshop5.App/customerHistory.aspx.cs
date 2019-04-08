@@ -12,7 +12,12 @@ namespace Workshop5.App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtTotal.Text = CustomerHistoryDB.totHist(105).ToString("c");
+            
+
+            
+            GVHistory.DataSource = CustomerHistoryDB.PurchaseList(120);
+            GVHistory.DataBind();
+            txtTotal.Text = CustomerHistoryDB.totHist(120).ToString("c");
         }
 
         protected void txtTotal_TextChanged(object sender, EventArgs e)
