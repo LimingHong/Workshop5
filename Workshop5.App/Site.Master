@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Workshop5.App.SiteMaster" %>
+﻿q<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Workshop5.App.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -134,7 +134,7 @@
                                </div>
 
                                <div class="col-12">
-                                   <a runat="server" href="~/CustomerSignUp.aspx">Register with us?</a>
+                                   <a runat="server" href="~/RegisterUser.aspx">Register with us?</a>
                                </div>
 
                                 <!-- Button -->
