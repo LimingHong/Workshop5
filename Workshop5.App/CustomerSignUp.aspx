@@ -56,7 +56,7 @@
      <td>
          <asp:TextBox ID="uxPostal" runat="server"></asp:TextBox>
          <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="uxPostal" Display="Dynamic" ErrorMessage="Postal Code is required" ForeColor="Red"></asp:RequiredFieldValidator>
-         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="uxPostal" ErrorMessage="RegularExpressionValidator" ValidationExpression="^[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]$"></asp:RegularExpressionValidator>
+         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="uxPostal" ErrorMessage="Use T1T 1T1 Format " ValidationExpression="^[A-Za-z][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]$" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
     </td>
 </tr>
 <tr>

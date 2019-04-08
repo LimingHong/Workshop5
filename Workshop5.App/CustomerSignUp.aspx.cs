@@ -46,7 +46,11 @@ namespace Workshop5.App
                     else 
                         customer.CustBusPhone = uxBusPhone.Text;
 
-                    
+                    if (uxEmail.Text.Trim() == "")
+                    {
+                        customer.CustEmail = "";
+                    }
+                    else
                     customer.CustEmail = uxEmail.Text;
 
 
