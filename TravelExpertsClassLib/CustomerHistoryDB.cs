@@ -50,6 +50,30 @@ namespace TravelExpertsClassLib
 
 
     //method for getting total of the customer's purchases 
-    
+
+
+    //    "select sum(d.BasePrice)"+
+    //  "from Customers c INNER JOIN Bookings b ON(c.CustomerId = b.CustomerId) INNER JOIN BookingDetails d ON(b.BookingId = d.BookingId)"+
+    // "where c.CustomerId = 105"
+//    SqlConnection con = GetConnection();
+
+//    SqlCommand cmd = new SqlCommand(prchtHistory, con);
+
+//            try
+//            {
+//                con.Open();
+//                cmd.ExecuteNonQuery();
+//                return PurchaseList();
+
+//}
+//            catch (Exception e)
+//            {
+
+//                throw e;
+//            }
+//            finally
+//            {
+//                con.Close();
+//            }
 
 }
