@@ -19,7 +19,9 @@
 
     <!-- One -->
     <section id="one" class="spotlight style1 bottom">
+
     <span class="image fit main"><img src="<%=VirtualPathUtility.ToAbsolute("~/assets/media/images/india.jpg") %>" alt="" /></span>
+
     <div class="content">
 	    <div class="container">
 		    <div class="row">
