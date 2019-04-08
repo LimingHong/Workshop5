@@ -302,5 +302,3 @@ C:\Users\812217\Desktop\W\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.dll
 C:\Users\812217\Desktop\W\Workshop5\Workshop5.App\obj\Debug\Workshop5.App.pdb
 C:\Users\812217\Desktop\W\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.dll
 C:\Users\812217\Desktop\W\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.pdb
-C:\Users\821129\Desktop\Workshop5\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.dll
-C:\Users\821129\Desktop\Workshop5\Workshop5\Workshop5.App\bin\TravelExpertsClassLib.pdb

@@ -228,65 +228,65 @@ namespace TravelExpertsClassLib
             }
         }
 
-        public static bool IsNameValid(string text, string name)
-        {
-            string pattern = @"^[a-zA-Z0-9]*$";
-            if (!Regex.IsMatch(text, pattern))
-            {
-                MessageBox.Show(name + "Please use a-z A-Z 0-9", "Entry Error");
-              
-                return false;
-            }
+        //public static bool IsNameValid(string text, string name)
+        //{
+        //    string pattern = @"^[a-zA-Z0-9]*$";
+        //    if (!Regex.IsMatch(text, pattern))
+        //    {
+        //        MessageBox.Show(name + "Please use a-z A-Z 0-9", "Entry Error");
 
-            return true;
-        }
-        public static bool IsPasswordValid(string text, string name)
-        {
-            string pattern = @"^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,15}$";
-            if (!Regex.IsMatch(text, pattern))
-            {
-                MessageBox.Show("Password must contain at least one letter, at least one number, and be longer than six charaters.", "Entry Error");
+        //        return false;
+        //    }
 
-                return false;
-            }
+        //    return true;
+        //}
+        //public static bool IsPasswordValid(string text, string name)
+        //{
+        //    string pattern = @"^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,15}$";
+        //    if (!Regex.IsMatch(text, pattern))
+        //    {
+        //        MessageBox.Show("Password must contain at least one letter, at least one number, and be longer than six charaters.", "Entry Error");
 
-            return true;
-        }
+        //        return false;
+        //    }
 
-        public static bool IsPostalValid(string text, string name)
-        {
-            string pattern = @"^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$";
-            if (!Regex.IsMatch(text, pattern))
-            {
-                MessageBox.Show(name + "Please use correct format T1T 1T1", "Entry Error");
+        //    return true;
+        //}
 
-                return false;
-            }
+        //public static bool IsPostalValid(string text, string name)
+        //{
+        //    string pattern = @"^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$";
+        //    if (!Regex.IsMatch(text, pattern))
+        //    {
+        //        MessageBox.Show(name + "Please use correct format T1T 1T1", "Entry Error");
 
-            return true;
-        }
-        public static bool IsStateValid(string text, string name)
-        {
-            string pattern = @"^[A-Z][A-Z]$";
-            if (!Regex.IsMatch(text, pattern))
-            {
-                MessageBox.Show(name + "Please use correct format AB", "Entry Error");
+        //        return false;
+        //    }
 
-                return false;
-            }
+        //    return true;
+        //}
+        //public static bool IsStateValid(string text, string name)
+        //{
+        //    string pattern = @"^[A-Z][A-Z]$";
+        //    if (!Regex.IsMatch(text, pattern))
+        //    {
+        //        MessageBox.Show(name + "Please use correct format AB", "Entry Error");
 
-            return true;
-        }
+        //        return false;
+        //    }
+
+        //    return true;
+        //}
 
 
 
 
         public static bool IsPresent(string textBox, string name)
         {
-            if (textBox== "")
+            if (textBox == "")
             {
                 MessageBox.Show(name + " is a required field.", "Entry Error");
-                
+
                 return false;
             }
             return true;
@@ -329,7 +329,7 @@ namespace TravelExpertsClassLib
             if ((textBox).Length > maxLen)
             {
                 MessageBox.Show(name + " can be at most " + maxLen.ToString() + " long", "Entry Error");
-                
+
                 return false;
             }
             return true;
