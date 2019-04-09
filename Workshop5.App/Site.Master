@@ -1,4 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Workshop5.App.SiteMaster" %>
+<%@ Import Namespace="System.Globalization" %>
+<%@ Import Namespace="System.Threading" %>
+<%@ Import Namespace="TravelExpertsClassLib" %>
 
 <!DOCTYPE html>
 
@@ -12,60 +15,454 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <%--<webopt:bundlereference runat="server" path="~/Content/css" />--%>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="<%=VirtualPathUtility.ToAbsolute("~/assets/css/main.css") %>" rel="stylesheet"/>
 
+    <noscript><link rel="stylesheet" href="<%=VirtualPathUtility.ToAbsolute("~/assets/css/noscript.css") %>" /></noscript>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+
+        /****************************/
+        /*Modal pop up panel*/
+        .close {
+            float: right;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1;
+            color: #000000;
+            text-shadow: 0 0 0 transparent;
+            filter: alpha(opacity=20);
+            opacity: 0.2;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+        button.close {
+            padding: 0;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            -webkit-appearance: none;
+        }
+
+        .modal-header:before,
+        .modal-header:after,
+        .modal-footer:before,
+        .modal-footer:after {
+            display: table;
+            content: " ";
+        }
+
+        .modal-open {
+            overflow: hidden;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1050;
+            display: none;
+            overflow: hidden;
+            -webkit-overflow-scrolling: touch;
+            outline: 0;
+        }
+
+        .modal.fade .modal-dialog {
+            -webkit-transform: translate(0, -25%);
+            transform: translate(0, -25%);
+            transition: -webkit-transform 0.3s ease-out;
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.in .modal-dialog {
+            -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+        .modal-open .modal {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .modal-dialog {
+            position: relative;
+            width: auto;
+            margin: 10px;
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #ffffff;
+            background-clip: padding-box;
+            border: 1px solid #f8f5f0;
+            border-radius: 6px;
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+            outline: 0;
+        }
+
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1040;
+            background-color: #000000;
+        }
+
+        .modal-backdrop.fade {
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+
+        .modal-backdrop.in {
+            filter: alpha(opacity=50);
+            opacity: 0.5;
+        }
+
+        .modal-header {
+            padding: 15px;
+            border-bottom: 1px solid #f8f5f0;
+        }
+
+        .modal-header .close {
+            margin-top: -2px;
+        }
+
+        .modal-title {
+            margin: 0;
+            line-height: 1.42857143;
+        }
+
+        .modal-body {
+            position: relative;
+            padding: 15px;
+        }
+
+        .modal-footer {
+            padding: 15px;
+            text-align: right;
+            border-top: 1px solid #f8f5f0;
+        }
+
+        .modal-footer .btn + .btn {
+            margin-bottom: 0;
+            margin-left: 5px;
+        }
+
+        .modal-footer .btn-group .btn + .btn {
+            margin-left: -1px;
+        }
+
+        .modal-footer .btn-block + .btn-block {
+            margin-left: 0;
+        }
+
+        .modal-scrollbar-measure {
+            position: absolute;
+            top: -9999px;
+            width: 50px;
+            height: 50px;
+            overflow: scroll;
+        }
+
+        @media (min-width: 768px) {
+            .modal-dialog {
+                width: 600px;
+                margin: 30px auto;
+            }
+
+            .modal-content {
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            }
+
+            .modal-sm {
+                width: 300px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .modal-lg {
+                width: 900px;
+            }
+        }
+        /******************************************************/
+
+        #banner:after {
+        
+            background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.64)), url("images/overlay.png");
+        
+            background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.64)), url("images/overlay.png");
+        
+            background-image: linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.64)), url("images/overlay.png");
+        
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .FullInput {
+            padding: 0;
+            margin: 0;
+        }
+        .LeftLabel {
+            text-align: left;
+            margin: 0;
+        }
+        div.modal-header {
+            border: 0;
+        }
+        div.modal-dialog {
+            margin: 30px 0;
+        }
+        div.modal-content {
+            position: absolute;
+            left: 50vw;
+            transform: translate(-50%, 0%);
+            width: 30vw;
+            background-color: black;
+            background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("assets/css/images/grad.jpg");
+            background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("assets/css/images/grad.jpg");
+            background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("assets/css/images/grad.jpg");
+        }
+        div.modal-body {
+            padding: 0% 12% 5% 12%;
+        }
+        div.modal-content .control-label {
+            text-align: left;
+        }
+    </style>
 </head>
-<body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
-
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
+<body class="is-preload landing" style="padding: 0;">
+        <form runat="server" style="margin: 0;">
+            <asp:ScriptManager runat="server">
+                <Scripts>
+                    <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                    <%--Framework Scripts--%>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <%--Site Scripts--%>
+                </Scripts>
+            </asp:ScriptManager>
+            
+            <!-- Header -->
+            <header id="header">
+                <h1 id="logo"><a runat="server" href="~/">Travel Experts</a></h1>
+                <nav id="nav">
+                    <ul>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <% bool status = (bool)Session["AccStatus"] ;
+                            if (!status)
+                            { %>
+                            
+                        <li><asp:Button class="button" data-toggle="modal" data-target="#myModal" ID="uxSignInBtnNav" runat="server" Text="Sign In" OnClick="uxSignInBtnNav_Click" /></li>
+                        <% }
+                           else
+                           {
+                               
+                        %>
+                            <li><a runat="server" href="~/Service.aspx">Services</a></li>
+                            <li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap; opacity: 1;">
+                                Welcome, <asp:HyperLink ID="uxAccountNameLink" runat="server"></asp:HyperLink> !
+								
+                                <ul class="" style="user-select: none; display: none; position: absolute;">
+                                    <li style="white-space: nowrap;"><a href="#" style="display: block; text-align: center;">Profile</a></li>
+                                    <li style="white-space: nowrap;"><button type="button" class="button small fit"  data-target="#BookingHistoryModal" data-toggle="modal">Booking History</button></li>
+                                    
+                                    <%--For Future--%>
+                                    <%--<li class="opener" style="user-select: none; cursor: pointer; white-space: nowrap;">
+                                        <a href="#" style="display: block;">Submenu</a>
+                                        <ul class="dropotron" style="user-select: none; display: none; position: absolute;">
+                                            <li style="white-space: nowrap;"><a href="#" style="display: block;">Option 1</a></li>
+                                            <li style="white-space: nowrap;"><a href="#" style="display: block;">Option 2</a></li>
+                                            <li style="white-space: nowrap;"><a href="#" style="display: block;">Option 3</a></li>
+                                            <li style="white-space: nowrap;"><a href="#" style="display: block;">Option 4</a></li>
+                                        </ul>
+                                    </li>--%>
+                                    <li style="white-space: nowrap;">
+                                        <form id="signout-form" name="signout-form" method="POST">
+                                            <asp:Button type="sumbit" class="button primary small fit" ID="uxLogout" runat="server" Text="Log Out" OnClick="uxLogout_OnClick" UseSubmitBehavior="False"/>
+                                        </form>
+                                    </li>
+                                </ul></li>
+                            
+                        <% } %>
                     </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
+                </nav>
+            </header>
+            
+            
+            
+            
+            <div id="page-wrapper" >
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                
+            <% if (!status)
+               { %>
+                <!-- Modal -->
+                <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class=" modal-header">
+                            <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                            <h2 class="modal-title">Login</h2>
+                        </div>
+                        
+                      <div class="modal-body">
 
-    </form>
+                        <div class="tab-pane fade active in " id="signin">
+                            <form id="signin-form" name="signin-form" method="POST">
+                           <div class="row gtr-uniform gtr-50">  
+
+                                <!-- Sign In Form -->
+
+                                <!-- Text input-->
+                               <div class="col-12">
+                                  <label class="control-label" for="userid">UserName:</label>
+                                   <asp:TextBox ID="uxUserNameLogin" placeholder="TravelExperts@mail.com" class="input-medium" required runat="server"></asp:TextBox>
+                                </div>
+
+                                <!-- Password input-->
+                                <div class="col-12">
+                                  <label class="control-label" for="passwordinput">Password:</label>
+                                  <asp:TextBox ID="uxPasswordLogin" type="password" placeholder="**********"  class="input-medium" required runat="server"></asp:TextBox>
+                                  
+                                </div>
+                               
+                                   
+                               <div class="col-12">
+                                   <input type="checkbox" id="uxSaveMyInfo" name="SaveMyInfo" checked="True" runat="server" UseSubmitBehavior="False"/>
+                                   <label for="SaveMyInfo"> Remember Me </label>
+                               </div>
+                               
+
+                               <div class="col-12">
+                                   <a runat="server" href="~/UserReg.aspx">Register with us?</a>
+                               </div>
+
+                                <!-- Button -->
+                                <div class="col-12">
+                                  <label class="control-label" for="signin"></label>
+                                  <div class="controls">
+                                    <%--<button id="signin" name="signin" class="button primary fit small">Sign In</button>--%>
+                                      <asp:Button ID="uxSignInBtn" Class="button primary fit" runat="server" Text="Log In" OnClick="uxSignInBtn_Click" />
+
+                                 </div>
+                                </div>
+                           </div>  
+                            </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <% }
+               else
+               {%>
+                    <div class="modal fade" id="BookingHistoryModal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content" style="width: 70vw;">
+                                <div class=" modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" style="color: white;">&times;</button>
+                                    <h2 class="modal-title"> <%= Session["CustFirstName"] + "'s Booking History"%></h2>
+                                </div>
+                                <hr />
+                                <div class="modal-body">
+                                
+                                <div class="table-wrapper">
+                                    <table class="alt">
+                                        <thead>
+                                        <tr>
+                                            <th>Destination</th>
+                                            <th>Description</th>
+                                            <th>Price($)</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <% foreach (CustomerHistory ch in CustomerHistoryDB.PurchaseList(Convert.ToInt32(Session["CustomerId"])))
+                                           {%>
+                                               
+                                        <tr>
+                                            <td><%= ch.Destination.ToString() %></td>
+                                            <td><%= ch.Description.ToString() %></td>
+                                            <td><%= ch.BasePrice.ToString("c2") %></td>
+                                        </tr>
+
+                                         <%} %>
+                                        
+                                        </tbody>
+                                        <tfoot>
+                                        <tr>
+                                            <td colspan="2">Total:</td>
+                                            <td><%= CustomerHistoryDB.totHist(Convert.ToInt32(Session["CustomerId"])).ToString("c") %></td>
+                                        </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                                <p >
+                                    
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+              <%
+               }
+              %>
+
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>Terms of Service | Privacy Policy <br/>
+                            &copy; <%: DateTime.Now.Year %> Travel Experts, Inc. All rights reserved</li><li>Email: <a href="mailto:Info@travelexperts.ca">Info@travelexperts.ca</a></li>
+                    </ul>
+                </footer>
+
+            </div>
+
+        </form>
+
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.min.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.scrolly.min.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.dropotron.min.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/jquery.scrollex.min.js")%>"></script>
+
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/browser.min.js")%>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/breakpoints.min.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/util.js") %>"></script>
+<script src="<%=VirtualPathUtility.ToAbsolute("~/assets/js/main.js") %>"></script>
+
 </body>
 </html>
