@@ -6,6 +6,7 @@
         public string AgtFirstName { get; set; }
         public string AgtMiddleInitial { get; set; }
         public string AgtLastName { get; set; }
+        public string AgtFullName { get; set; }
         public string AgtBusPhone { get; set; }
         public string AgtEmail { get; set; }
         public string AgtPosition { get; set; }

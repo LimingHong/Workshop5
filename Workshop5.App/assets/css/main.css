@@ -1,3 +1,4 @@
+
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,100italic,300italic");
 
@@ -3425,14 +3426,13 @@ body.landing #header {
     }
 
     #banner:after {
-        background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
-        ;
-        background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
-        ;
-        background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
-        ;
-        background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.95)), url("images/overlay.png");
-        ;
+        
+        background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.54)), url("images/overlay.png");
+        
+        background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.54)), url("images/overlay.png");
+        
+        background-image: linear-gradient(top, rgba(23, 24, 32, 1), rgba(23, 24, 32, 0.54)), url("images/overlay.png");
+        
         content: '';
         display: block;
         height: 100%;

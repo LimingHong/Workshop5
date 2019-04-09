@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Globalization;
-using System.Threading;
+using System.Linq;
+using System.Web.Security;
 using System.Web.UI;
 using System.Windows.Forms;
 using TravelExpertsClassLib;
@@ -10,11 +10,38 @@ namespace Workshop5.App
     public partial class SiteMaster : MasterPage
     {
 
-        public bool validUser = false;
         public Customers currentCustomer = new Customers();
+
+        protected string FullNameCap(string fname, string lname)
+        {
+            if (String.IsNullOrEmpty(fname) || String.IsNullOrEmpty(lname))
+                throw new ArgumentException("Invalid Input, result failed ! Please use nonempty string");
+            return fname.First().ToString().ToUpper() + fname.Substring(1) + " " + lname.First().ToString().ToUpper() + lname.Substring(1);
+
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Session["validUser"] == null)
+                {
+                    Session["AccStatus"] = false;
+                }
+                else
+                {
+                    string firstName = Session["CustFirstName"] as string;
+                    string lastName = Session["CustLastName"] as string;
+                    uxAccountNameLink.Text = FullNameCap(firstName, lastName);
+
+                    if (Request.Cookies["UserName"] != null && Request.Cookies["Password"] != null)
+                    {
+                        uxUserNameLogin.Text = Request.Cookies["UserName"].Value;
+                        uxPasswordLogin.Text = Request.Cookies["Password"].Value;
+                    }
+
+                }
+            }
 
         }
 
@@ -46,11 +73,6 @@ namespace Workshop5.App
                         AgentId = inputUser.AgentId
                     };
 
-                    CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
-                    TextInfo textInfo = cultureInfo.TextInfo;
-                    string fullName =
-                        textInfo.ToTitleCase(currentCustomer.CustFirstName + " " + currentCustomer.CustLastName);
-                    Session["UserFullName"] = fullName;
                     Session["CustomerId"] = currentCustomer.CustomerId;
                     Session["CustFirstName"] = currentCustomer.CustFirstName;
                     Session["CustLastName"] = currentCustomer.CustLastName;
@@ -62,21 +84,45 @@ namespace Workshop5.App
                     Session["CustBusPhone"] = currentCustomer.CustBusPhone;
                     Session["CustEmail"] = currentCustomer.CustEmail;
                     Session["AgentId"] = currentCustomer.AgentId;
+                    Session["validUser"] = currentCustomer;
+                    Session["AccStatus"] = true;
 
-                    MessageBox.Show("Login Successful!" +
-                                    "\n " + currentCustomer.CustomerId +
-                                    "\n" + currentCustomer.CustFirstName + " " + currentCustomer.CustLastName);
+                    string firstName = Session["CustFirstName"] as string;
+                    string lastName = Session["CustLastName"] as string;
+                    uxAccountNameLink.Text = FullNameCap(firstName, lastName);
 
-                    validUser = true;
-                    uxAccountNameLink.Text = fullName;
+                    if (uxSaveMyInfo.Checked)
+                    {
+                        Response.Cookies["UserName"].Value = uxUserNameLogin.Text;
+                        Response.Cookies["UserName"].Expires = DateTime.Now.AddMinutes(20);
+
+                        Response.Cookies["Password"].Value = uxPasswordLogin.Text;
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddMinutes(20);
+
+
+                    }
+                    else
+                    {
+                        Response.Cookies["UserName"].Expires = DateTime.Now.AddMinutes(-1);
+                        Response.Cookies["Password"].Expires = DateTime.Now.AddMinutes(-1);
+
+                    }
+
+                    // // for testing
+                    //MessageBox.Show("Login Successful!" +
+                    //                "\n " + currentCustomer.CustomerId +
+                    //                "\n" + currentCustomer.CustFirstName + " " + currentCustomer.CustLastName);
+
                 }
                 else
                 {
                     MessageBox.Show("Login Fail !");
+                    Session["AccStatus"] = false;
                 }
             }
             else
             {
+                Session["AccStatus"] = false;
                 MessageBox.Show("Empty Fields! Please fill in Username and Password. ");
             }
 
@@ -85,7 +131,14 @@ namespace Workshop5.App
         protected void uxSignInBtnNav_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
+        }
 
+        protected void uxLogout_OnClick(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            Session.Clear();
+            Session.RemoveAll();
+            Response.Redirect("Default.aspx");
         }
     }
 }

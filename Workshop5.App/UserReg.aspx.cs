@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web;
 using System.Windows.Forms;
 using TravelExpertsClassLib;
@@ -7,9 +8,13 @@ namespace Workshop5.App
 {
     public partial class UserReg : System.Web.UI.Page
     {
+        private List<Agents> allAgents = AgentsDB.GetAllAgents();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            uxAgentId.DataSource = allAgents;
+            uxAgentId.DataValueField = "AgentId";
+            uxAgentId.DataTextField = "AgtFullName";
+            uxAgentId.DataBind();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -55,10 +60,10 @@ namespace Workshop5.App
                         customer.CustEmail = uxEmail.Text;
 
 
-                    if (uxAgentId.Text.Trim() == "")
-                        customer.AgentId = null;
-                    else
-                        customer.AgentId = Convert.ToInt16(uxAgentId.Text);
+                    //if (uxAgentId.Text.Trim() == "")
+                    //    customer.AgentId = null;
+                    //else
+                    //    customer.AgentId = Convert.ToInt16(uxAgentId.Text);
 
 
 
@@ -95,6 +100,24 @@ namespace Workshop5.App
                 }
 
             }
+        }
+
+        protected void uxCancel_Click(object sender, EventArgs e)
+        {
+            uxAddress.Text =
+                uxBusPhone.Text =
+                    uxCity.Text =
+                        uxEmail.Text =
+                            uxFirstName.Text =
+                                uxHomePhone.Text =
+                                    uxLastName.Text =
+                                        uxPassword.Text =
+                                            uxPostal.Text =
+                                                uxProv.Text =
+                                                    uxUsername.Text =
+                                                        uxRePassword.Text = "";
+            Response.Redirect("Default.aspx");
+
         }
     }
 }

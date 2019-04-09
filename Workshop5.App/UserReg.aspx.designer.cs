@@ -67,15 +67,6 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.TextBox uxPostal;
         
         /// <summary>
-        /// uxHomePhone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxHomePhone;
-        
-        /// <summary>
         /// uxBusPhone control.
         /// </summary>
         /// <remarks>
@@ -85,6 +76,15 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.TextBox uxBusPhone;
         
         /// <summary>
+        /// uxHomePhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox uxHomePhone;
+        
+        /// <summary>
         /// uxEmail control.
         /// </summary>
         /// <remarks>
@@ -92,15 +92,6 @@ namespace Workshop5.App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox uxEmail;
-        
-        /// <summary>
-        /// uxAgentId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxAgentId;
         
         /// <summary>
         /// uxUsername control.
@@ -130,6 +121,15 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.TextBox uxRePassword;
         
         /// <summary>
+        /// uxAgentId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList uxAgentId;
+        
+        /// <summary>
         /// uxRegisterBtn control.
         /// </summary>
         /// <remarks>
@@ -137,5 +137,14 @@ namespace Workshop5.App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button uxRegisterBtn;
+        
+        /// <summary>
+        /// uxCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button uxCancel;
     }
 }
