@@ -11,10 +11,13 @@ namespace Workshop5.App
         private List<Agents> allAgents = AgentsDB.GetAllAgents();
         protected void Page_Load(object sender, EventArgs e)
         {
-            uxAgentId.DataSource = allAgents;
-            uxAgentId.DataValueField = "AgentId";
-            uxAgentId.DataTextField = "AgtFullName";
-            uxAgentId.DataBind();
+            if (!IsPostBack)
+            {
+                uxAgentId.DataSource = allAgents;
+                uxAgentId.DataValueField = "AgentId";
+                uxAgentId.DataTextField = "AgtFullName";
+                uxAgentId.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)

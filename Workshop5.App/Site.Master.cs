@@ -77,7 +77,9 @@ namespace Workshop5.App
                         CustHomePhone = inputUser.CustHomePhone,
                         CustBusPhone = inputUser.CustBusPhone,
                         CustEmail = inputUser.CustEmail,
-                        AgentId = inputUser.AgentId
+                        AgentId = inputUser.AgentId,
+                        username = inputUser.username,
+                        userPass = inputUser.userPass
                     };
 
                     Session["CustomerId"] = currentCustomer.CustomerId;

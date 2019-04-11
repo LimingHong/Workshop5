@@ -103,7 +103,18 @@ namespace TravelExpertsClassLib
 
                     //any exception will be thrown to the place where this method was called
                     con.Open(); // open connection
-                    total = Convert.ToDecimal(cmd.ExecuteScalar()); // closes connection when done reading
+                    var outPut = cmd.ExecuteScalar();
+
+                    if (outPut != DBNull.Value)
+                    {
+                        total = Convert.ToDecimal(outPut);
+
+                    }
+                    else
+                    {
+                        total = 0;
+                    }
+
                 }
             }
             return total;
