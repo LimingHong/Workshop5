@@ -1,19 +1,16 @@
-﻿<%--Author Liming Hong--%>
-
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserReg.aspx.cs" Inherits="Workshop5.App.UserReg" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-
+﻿<%@ Page Title="UserUpdate" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserUpdate.aspx.cs" Inherits="Workshop5.App.UserUpdate" %>
+<asp:Content ID="UserUpdate" ContentPlaceHolderID="MainContent" runat="server">
+    
 <div id="main" class="wrapper style1 " style="background-color: black;">
 					<div class="container" >
 						<header class="major">
-							<h2>Registering User</h2>
-							<p>Please fill in this form to create an account.</p>
+							<h2>Update <span runat="server" id="uxUserNameTitle"></span> Information</h2>
+							<p>Please fill in this form to update your account.</p>
 						</header>
 
 						<!-- Form -->
 							<section>
-								<form id="register-form" name="register-form" method="POST">
+								<form id="update-form" name="update-form" method="POST">
 									<div class="row gtr-uniform gtr-50">
 
 										<div class="col-6 col-12-xsmall">
@@ -59,21 +56,19 @@
 										</div>
 
 										<div class="col-6 col-12-xsmall">
-											<asp:TextBox ID="uxHomePhone" type="text" name="HomePhone" value="" placeholder="Home Phone Number" runat="server" OnTextChanged="uxHomePhone_TextChanged"></asp:TextBox>
+											<asp:TextBox ID="uxHomePhone" type="text" name="HomePhone" value="" placeholder="Home Phone Number" runat="server" ></asp:TextBox>
 											<asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="uxHomePhone" Display="Dynamic" ErrorMessage="only number 4034004444" ForeColor="Red" ValidationExpression="^[0-9]{0,10}$"></asp:RegularExpressionValidator>
 											<asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="uxHomePhone" Display="Dynamic" ErrorMessage="Home phone is missing" ForeColor="Red"></asp:RequiredFieldValidator>
 										</div>
 										
 										<div class="col-12">
-											<asp:TextBox ID="uxEmail" type="text" name="Email" value="" placeholder="Email" runat="server" OnTextChanged="uxEmail_TextChanged"></asp:TextBox>
-											<asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ControlToValidate="uxEmail" Display="Dynamic" ErrorMessage="Please enter valid email" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+											<asp:TextBox ID="uxEmail" type="text" name="Email" value="" placeholder="Email" runat="server" ></asp:TextBox>
 										</div>
 										
 										<div class="col-12">
 											<asp:TextBox ID="uxUsername" type="text" name="UserName" value="" placeholder="User Name" runat="server"></asp:TextBox>
-											<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="uxUsername" Display="Dynamic" ErrorMessage="The username can only have letters and numbers" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9]*$"></asp:RegularExpressionValidator>
-											<asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="uxUsername" Display="Dynamic" ErrorMessage="User name is missing" ForeColor="Red"></asp:RequiredFieldValidator>
-										</div>
+											
+                                        </div>
 										
 										<div class="col-12">
 											<asp:TextBox ID="uxPassword" type="text" name="Password" value="" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
@@ -97,7 +92,7 @@
 
 										<div class="col-12">
 											<ul class="actions">
-												<li><asp:Button ID="uxRegisterBtn" Class="button primary fit" runat="server" Text="Register" OnClick="uxRegisterBtn_Click" /></li>
+												<li><asp:Button ID="uxUpdateBtn" Class="button primary fit" runat="server" Text="Update" OnClick="uxUpdateBtn_Click" /></li>
 												<li><asp:Button ID="uxCancel" Class="button" runat="server" Text="Cancel" OnClick="uxCancel_Click" /></li>
 											</ul>
 										</div>
@@ -107,122 +102,4 @@
 							</section>
 					</div>
 				</div>
-	
-
-<%--<form id="register-form" name="register-form" method="POST">
-	<table>
- <tr>
-	 <td>
-		 First Name
-	 </td>
-	 <td>
-		 <asp:TextBox ID="uxFirstName" runat="server"></asp:TextBox>
-	 </td>
- </tr>   
-	<tr>
-		<td>
-			Last Name
-		</td>
-		<td>
-			<asp:TextBox ID="uxLastName" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Address
-		</td>
-		<td>
-			<asp:TextBox ID="uxAddress" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			City
-		</td>
-		<td>
-			<asp:TextBox ID="uxCity" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Province
-		</td>
-		<td>
-			<asp:TextBox ID="uxProv" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Postal Code
-		</td>
-		<td>
-			<asp:TextBox ID="uxPostal" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			HomePhone
-		</td>
-		<td>
-			<asp:TextBox ID="uxHomePhone" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Business Phone
-		</td>
-		<td>
-			<asp:TextBox ID="uxBusPhone" runat="server"></asp:TextBox>
-
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Email
-		</td>
-		<td>
-			<asp:TextBox ID="uxEmail" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			AgentId
-		</td>
-		<td>
-			<asp:TextBox ID="uxAgentId" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Username
-		</td>
-		<td>
-			<asp:TextBox ID="uxUsername" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			User Password
-		</td>
-		<td>
-			<asp:TextBox ID="uxPassword" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-	<tr>
-		<td>
-			Re-password
-		</td>
-		<td>
-			<asp:TextBox ID="uxRePassword" runat="server"></asp:TextBox>
-		</td>
-	</tr>   
-  
-
-
-</table>    
-</form>
-	<%--<asp:Button ID="Button1" runat="server" Text="SignUp" OnClick="Button1_Click" />   --%> 
-	
-	
-
 </asp:Content>

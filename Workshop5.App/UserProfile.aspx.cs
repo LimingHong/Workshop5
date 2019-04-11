@@ -57,9 +57,6 @@ namespace Workshop5.App
 
         }
 
-        protected void uxEditProfileBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Default.aspx");
-        }
+
     }
 }

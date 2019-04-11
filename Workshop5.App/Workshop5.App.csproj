@@ -209,6 +209,7 @@
     <Content Include="Site.Master" />
     <Content Include="UserProfile.aspx" />
     <Content Include="UserReg.aspx" />
+    <Content Include="UserUpdate.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -285,6 +286,13 @@
     </Compile>
     <Compile Include="UserReg.aspx.designer.cs">
       <DependentUpon>UserReg.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserUpdate.aspx.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserUpdate.aspx.designer.cs">
+      <DependentUpon>UserUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

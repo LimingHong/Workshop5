@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <asp:Button name="uxEditPro" BackColor="goldenrod" class="inputEdit" ID="uxEditProfileBtn" runat="server" Text="Edit Profile" OnClick="uxEditProfileBtn_Click" />
+                        <a href="UserUpdate.aspx" class="inputEdit" > Edit Profile </a>
                     </div>
                 </div>
                 <div class="row">

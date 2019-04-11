@@ -66,10 +66,7 @@ namespace Workshop5.App
                         customer.CustEmail = uxEmail.Text;
 
 
-                    //if (uxAgentId.Text.Trim() == "")
-                    //    customer.AgentId = null;
-                    //else
-                    //    customer.AgentId = Convert.ToInt16(uxAgentId.Text);
+                    customer.AgentId = uxAgentId.SelectedIndex;
 
 
 
