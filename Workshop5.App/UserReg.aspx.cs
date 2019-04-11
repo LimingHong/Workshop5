@@ -1,4 +1,7 @@
-﻿using System;
+﻿//Author: Liming Hong
+
+
+using System;
 using System.Collections.Generic;
 using System.Web;
 using System.Windows.Forms;
@@ -120,6 +123,16 @@ namespace Workshop5.App
                                                     uxUsername.Text =
                                                         uxRePassword.Text = "";
             Response.Redirect("Default.aspx");
+
+        }
+
+        protected void uxHomePhone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void uxEmail_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

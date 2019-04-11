@@ -3,14 +3,16 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-
+/// <summary>
+/// Author :Liming Hong
+/// </summary>
 namespace TravelExpertsClassLib
 {
     /// <summary>
     /// Provides static methods for validating data.
     /// </summary>
     public static class Validator
-    {
+    {   
         public static bool IsEmail(TextBox emailTB, string name)
         {
             try
@@ -26,7 +28,9 @@ namespace TravelExpertsClassLib
                 return false;
             }
         }
-
+        /// <summary>
+        /// Author :Liming Hong
+        /// </summary>
         public static bool IsNameValid(string text, string name)
         {
             string pattern = @"^[a-zA-Z0-9]*$";
@@ -39,6 +43,9 @@ namespace TravelExpertsClassLib
 
             return true;
         }
+        /// <summary>
+        /// Author :Liming Hong
+        /// </summary>
         public static bool IsPasswordValid(string text, string name)
         {
             string pattern = @"^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{6,15}$";
@@ -51,7 +58,9 @@ namespace TravelExpertsClassLib
 
             return true;
         }
-
+        /// <summary>
+        /// Author :Liming Hong
+        /// </summary>
         public static bool IsPostalValid(string text, string name)
         {
             string pattern = @"^[A-Za-z]\d[A-Za-z] \d[A-Za-z]\d$";
@@ -64,6 +73,9 @@ namespace TravelExpertsClassLib
 
             return true;
         }
+        /// <summary>
+        /// Author :Liming Hong
+        /// </summary>
         public static bool IsStateValid(string text, string name)
         {
             string pattern = @"^[A-Z][A-Z]$";
@@ -79,7 +91,9 @@ namespace TravelExpertsClassLib
 
 
 
-
+        /// <summary>
+        /// Author :Liming Hong
+        /// </summary>
         public static bool IsPresent(string textBox, string name)
         {
             if (textBox== "")
@@ -90,6 +104,7 @@ namespace TravelExpertsClassLib
             }
             return true;
         }
+
         public static bool IsPresentCombo(ComboBox textBox, string name)
         {
             if (textBox.DisplayMember == "")
