@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TravelExpertsClassLib
 {
@@ -24,7 +21,7 @@ namespace TravelExpertsClassLib
 
             string prchtHistory = "select c.CustomerId, c.CustFirstName, d.Description, d.destination, d.baseprice " +
                         "from Customers c INNER JOIN Bookings b ON(c.CustomerId = b.CustomerId) INNER JOIN BookingDetails d ON(b.BookingId = d.BookingId) " +
-                        "where c.CustomerId = "+ID+/*change this condition for a variable like @username but has to be set prior or a session*/
+                        "where c.CustomerId = " + ID +/*change this condition for a variable like @username but has to be set prior or a session*/
                         "group by c.CustomerId, c.CustFirstName, d.Description, d.destination, d.baseprice";
 
 
@@ -106,7 +103,6 @@ namespace TravelExpertsClassLib
 
                     //any exception will be thrown to the place where this method was called
                     con.Open(); // open connection
-
                     total = Convert.ToDecimal(cmd.ExecuteScalar()); // closes connection when done reading
                 }
             }

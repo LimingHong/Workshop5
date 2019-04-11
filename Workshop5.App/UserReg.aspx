@@ -60,11 +60,11 @@
                                         </div>
                                         
                                         <div class="col-12">
-                                            <asp:TextBox ID="uxPassword" type="text" name="Password" value="" placeholder="Password" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="uxPassword" type="text" name="Password" value="" placeholder="Password" runat="server" TextMode="Password"></asp:TextBox>
                                         </div>
                                             
                                         <div class="col-12">
-                                            <asp:TextBox ID="uxRePassword" type="text" name="RePassword" value="" placeholder="Confirm Password" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="uxRePassword" type="text" name="RePassword" value="" placeholder="Confirm Password" runat="server" TextMode="Password"></asp:TextBox>
                                         </div>                                            
 
 										<div class="col-12">
