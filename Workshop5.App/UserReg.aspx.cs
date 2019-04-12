@@ -30,12 +30,13 @@ namespace Workshop5.App
 
         protected void uxRegisterBtn_Click(object sender, EventArgs e)
         {
-            if (Validator.IsNameValid(uxFirstName.Text, "First Name") &&
-                     Validator.IsNameValid(uxLastName.Text, "Last Name") &&
-                     Validator.IsPostalValid(uxPostal.Text, "Postal Code") &&
-                     Validator.IsStateValid(uxProv.Text, "Province") &&
-                     Validator.IsNameValid(uxUsername.Text, "User Name") &&
-                     Validator.IsPasswordValid(uxPassword.Text, "Password"))
+            if (
+                Validator.IsNameValid(uxFirstName.Text.Trim(), "First Name") &&
+                     Validator.IsNameValid(uxLastName.Text.Trim(), "Last Name") &&
+                     Validator.IsPostalValid(uxPostal.Text.Trim(), "Postal Code") &&
+                     Validator.IsStateValid(uxProv.Text.Trim(), "Province") &&
+                     Validator.IsNameValid(uxUsername.Text.Trim(), "User Name") &&
+                     Validator.IsPasswordValid(uxPassword.Text.Trim(), "Password"))
             {
                 try
                 {

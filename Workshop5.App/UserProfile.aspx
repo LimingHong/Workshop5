@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <a href="UserUpdate.aspx" class="inputEdit" > Edit Profile </a>
+                        <a href="~/UpdateUserAcc.aspx" class="inputEdit" runat="server"> Edit Profile </a>
                     </div>
                 </div>
                 <div class="row">

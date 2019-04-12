@@ -12,7 +12,7 @@ namespace TravelExpertsClassLib
     /// Provides static methods for validating data.
     /// </summary>
     public static class Validator
-    {   
+    {
         public static bool IsEmail(TextBox emailTB, string name)
         {
             try
@@ -37,7 +37,7 @@ namespace TravelExpertsClassLib
             if (!Regex.IsMatch(text, pattern))
             {
                 MessageBox.Show(name + "Please use a-z A-Z 0-9", "Entry Error");
-              
+
                 return false;
             }
 
@@ -94,12 +94,12 @@ namespace TravelExpertsClassLib
         /// <summary>
         /// Author :Liming Hong
         /// </summary>
-        public static bool IsPresent(string textBox, string name)
+        public static bool IsPresent(string textBoxValue, string name)
         {
-            if (textBox== "")
+            if (String.IsNullOrEmpty(textBoxValue))
             {
                 MessageBox.Show(name + " is a required field.", "Entry Error");
-                
+
                 return false;
             }
             return true;
@@ -143,7 +143,7 @@ namespace TravelExpertsClassLib
             if ((textBox).Length > maxLen)
             {
                 MessageBox.Show(name + " can be at most " + maxLen.ToString() + " long", "Entry Error");
-                
+
                 return false;
             }
             return true;

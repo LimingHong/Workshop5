@@ -10,7 +10,7 @@
 namespace Workshop5.App {
     
     
-    public partial class UserUpdate {
+    public partial class UpdateUserAcc {
         
         /// <summary>
         /// uxUserNameTitle control.
@@ -22,13 +22,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl uxUserNameTitle;
         
         /// <summary>
-        /// uxFirstName control.
+        /// uxFirstNameUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxFirstName;
+        protected global::System.Web.UI.WebControls.TextBox uxFirstNameUp;
         
         /// <summary>
         /// RegularExpressionValidator5 control.
@@ -49,13 +49,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
         
         /// <summary>
-        /// uxLastName control.
+        /// uxLastNameUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxLastName;
+        protected global::System.Web.UI.WebControls.TextBox uxLastNameUp;
         
         /// <summary>
         /// RegularExpressionValidator6 control.
@@ -76,13 +76,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
         
         /// <summary>
-        /// uxAddress control.
+        /// uxAddressUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxAddress;
+        protected global::System.Web.UI.WebControls.TextBox uxAddressUp;
         
         /// <summary>
         /// RegularExpressionValidator7 control.
@@ -103,13 +103,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator3;
         
         /// <summary>
-        /// uxCity control.
+        /// uxCityUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxCity;
+        protected global::System.Web.UI.WebControls.TextBox uxCityUp;
         
         /// <summary>
         /// RegularExpressionValidator9 control.
@@ -130,13 +130,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
         
         /// <summary>
-        /// uxProv control.
+        /// uxProvUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxProv;
+        protected global::System.Web.UI.WebControls.TextBox uxProvUp;
         
         /// <summary>
         /// RegularExpressionValidator4 control.
@@ -157,13 +157,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator5;
         
         /// <summary>
-        /// uxPostal control.
+        /// uxPostalUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxPostal;
+        protected global::System.Web.UI.WebControls.TextBox uxPostalUp;
         
         /// <summary>
         /// RegularExpressionValidator3 control.
@@ -184,13 +184,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
-        /// uxBusPhone control.
+        /// uxBusPhoneUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxBusPhone;
+        protected global::System.Web.UI.WebControls.TextBox uxBusPhoneUp;
         
         /// <summary>
         /// RegularExpressionValidator8 control.
@@ -202,13 +202,13 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator8;
         
         /// <summary>
-        /// uxHomePhone control.
+        /// uxHomePhoneUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxHomePhone;
+        protected global::System.Web.UI.WebControls.TextBox uxHomePhoneUp;
         
         /// <summary>
         /// RegularExpressionValidator10 control.
@@ -229,85 +229,49 @@ namespace Workshop5.App {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator7;
         
         /// <summary>
-        /// uxEmail control.
+        /// uxEmailUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxEmail;
+        protected global::System.Web.UI.WebControls.TextBox uxEmailUp;
         
         /// <summary>
-        /// uxUsername control.
+        /// uxUsernameUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxUsername;
+        protected global::System.Web.UI.WebControls.TextBox uxUsernameUp;
         
         /// <summary>
-        /// uxPassword control.
+        /// uxOldPassUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxPassword;
+        protected global::System.Web.UI.WebControls.TextBox uxOldPassUp;
         
         /// <summary>
-        /// RegularExpressionValidator1 control.
+        /// uxPasswordUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
+        protected global::System.Web.UI.WebControls.TextBox uxPasswordUp;
         
         /// <summary>
-        /// RequiredFieldValidator9 control.
+        /// uxRePasswordUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator9;
-        
-        /// <summary>
-        /// uxRePassword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxRePassword;
-        
-        /// <summary>
-        /// CompareValidator1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
-        
-        /// <summary>
-        /// RequiredFieldValidator10 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator10;
-        
-        /// <summary>
-        /// uxAgentId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList uxAgentId;
+        protected global::System.Web.UI.WebControls.TextBox uxRePasswordUp;
         
         /// <summary>
         /// uxUpdateBtn control.
