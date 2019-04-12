@@ -1,4 +1,7 @@
-﻿using System;
+﻿///Author: Guido Amaya
+///Date: April 2019
+///Description: "suppliers" db classs which gives functionality and access database in order to set the changes required
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;

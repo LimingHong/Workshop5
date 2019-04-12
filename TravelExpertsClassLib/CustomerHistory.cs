@@ -1,4 +1,9 @@
-﻿using System;
+﻿///Author: Guido Amaya
+///Date: April 2019
+///Description: this is the Customer History data class, which will gives to the business layer
+/// the main elements in order to complete the functionality required
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
