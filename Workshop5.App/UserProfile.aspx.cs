@@ -37,8 +37,8 @@ namespace Workshop5.App
                     uxBusiPhone.Value = currentUser.CustBusPhone;
                     uxUsernameInput.Value = currentUser.username;
                     uxEmailInput.Value = currentUser.CustEmail;
-                    string firstName = currentUser.CustFirstName;
-                    string lastName = currentUser.CustLastName;
+                    string firstName = Session["CustFirstName"] as string;
+                    string lastName = Session["CustLastName"] as string;
                     uxUserFullNameTitle.InnerText = FullNameCap(firstName, lastName);
 
                     uxUserFirstnameInput.Attributes.Add("readonly", "true");

@@ -58,13 +58,12 @@ namespace Workshop5.App
             {
                 Response.Redirect("Default.aspx");
             }
-            else
-            {
-                if (!Page.IsPostBack)
-                {
-                    Info();
-                }
-            }
+
+
+            Info();
+
+
+
         }
 
 
@@ -83,8 +82,6 @@ namespace Workshop5.App
             string CustEmail = uxEmailUp.Text.Trim();
             string username = uxUsernameUp.Text.Trim();
             string userPass = uxPasswordUp.Text.Trim();
-
-
 
             try
             {
@@ -110,7 +107,6 @@ namespace Workshop5.App
                 {
                     Session["validUser"] = customer;
                     status = "Uppdate Customer successful.";
-                    Response.Redirect("UserProfile.aspx");
                 }
 
                 MessageBox.Show(status);
@@ -122,11 +118,6 @@ namespace Workshop5.App
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
-
-
-
         }
 
         protected void uxCancel_Click(object sender, EventArgs e)

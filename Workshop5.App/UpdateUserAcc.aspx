@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UpdateUserAcc.aspx.cs" Inherits="Workshop5.App.UpdateUserAcc" %>
-<asp:Content ID="UpdateUserAcc" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server" >
        
 <div id="main" class="wrapper style1 " style="background-color: black;">
 					<div class="container" >
@@ -10,9 +10,6 @@
 
 						<!-- Form -->
 							<section>
-                            <asp:UpdatePanel runat="server">
-
-                            <ContentTemplate>
 									    <div class="row gtr-uniform gtr-50">
 
 										    <div class="col-6 col-12-xsmall">
@@ -95,16 +92,14 @@
 
 										    </div>                                            
                                             
-										    <div class="col-12">
-											    <ul class="actions">
-                                                    <li><asp:Button ID="uxUpdateBtn"  Class="button primary fit" Text="Update" runat="server" OnClick="uxUpdateBtn_Click" UseSubmitBehavior="False"/> </li>
-												    <li><asp:Button ID="uxCancel" Class="button" runat="server" Text="Cancel"  CausesValidation="False" OnClick="uxCancel_Click"/></li>
-											    </ul>
-                                                
-										    </div>
 									    </div>
-                            </ContentTemplate>
-                            </asp:UpdatePanel>
+										    
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><asp:Button ID="uxUpdateBtn"  Class="button primary fit" Text="Update" runat="server" OnClick="uxUpdateBtn_Click" UseSubmitBehavior="False"/></li>
+                                        <li><asp:Button ID="uxCancel" Class="button" runat="server" Text="Cancel"  CausesValidation="False" OnClick="uxCancel_Click"/></li>
+                                    </ul>
+                                </div>
 							</section>
 					</div>
 				</div>
