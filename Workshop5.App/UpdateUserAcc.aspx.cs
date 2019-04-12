@@ -110,6 +110,7 @@ namespace Workshop5.App
                 {
                     Session["validUser"] = customer;
                     status = "Uppdate Customer successful.";
+                    Response.Redirect("UserProfile.aspx");
                 }
 
                 MessageBox.Show(status);
