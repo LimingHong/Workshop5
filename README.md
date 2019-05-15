@@ -15,6 +15,9 @@
 * Asp.net frame
 * Windows 10
 * ASP.NET framework
+* Bootstrap
+* jQuery
+* SASS(CSS)
 
 ## Description:
 This web application allows users to register and login in order to manage history of booking. For future implementations, if needed, there will also be page for packages and booking of travel packages as well.
