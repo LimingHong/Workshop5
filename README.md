@@ -5,9 +5,8 @@
 [ericT135](https://github.com/ericT135) | [LimingHong](https://github.com/LimingHong) | [guidoamaya](https://github.com/guidoamaya) 
 
 ## Project Overview:
-![login](screenshots/1.png "Home Page")
-![MainForm](screenshots/2.png "Sign in Modal")
-![About](screenshots/3.png "About Page")
+![login](screenshots/1.gif "Home Page")
+
 
 ## Software and Tech stack used:
 * Visual Studio 2019 16.1
